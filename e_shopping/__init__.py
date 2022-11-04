@@ -33,9 +33,11 @@ def create_app():
 
     from .views.shopping import views as shop
     from .views.product import product as prod
+    from .views.users import userviews as users_views
 
     app.register_blueprint(shop)
     app.register_blueprint(prod)
+    app.register_blueprint(users_views)
 
     return app
 

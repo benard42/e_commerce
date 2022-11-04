@@ -8,7 +8,7 @@ def add_products():
     if request.method == 'POST':
         product_name = request.form['product_name']
         product_type = request.form['product_type']
-        Product_quality = request.form['Product_quality']
+        product_quantity = request.form['product_quantity']
         price = request.form['price']
         Total = request.form['Total']
         product = Post_product(product_name=product_name,product_type= product_type,Product_quality=Product_quality,price = price, Total= Total)

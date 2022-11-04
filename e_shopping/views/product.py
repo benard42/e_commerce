@@ -5,6 +5,10 @@ from e_shopping.models import Post_product
 product = Blueprint('product', __name__, url_prefix= '/product')
 
 @product.route('/')
+def hello():
+    return 'you have reached the hello page'
+
+@product.route('/')
 def index():
     if current_user.is_authenticated:
         user_product = Post_product.get_product_by_user_id(current_user.id)

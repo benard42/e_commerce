@@ -1,6 +1,6 @@
-from flask import Blueprint render_template, request,redirect,url_for,flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from e_shopping.models import User
-from flask_login import login_user,logout_user, login_required, current_user
+from flask_login import login_user, logout_user, login_required, current_user
 
 userviews = Blueprint('userviews', __name__, url_prefix = '/users')
 
@@ -51,9 +51,9 @@ def register():
 
         #create new user
         user = User(
-            username=username
-            email= email
-            password=password
+            username=username,
+            email= email,
+            password=User.hash_password(password)
         )
         user.save()
         flash('your account has been created, please login')
@@ -61,7 +61,7 @@ def register():
     return render_template('register.html')
 
 
-@userviews.route('logout', methods = ['POST'],['GET'])
+@userviews.route('logout', methods = ['POST','GET'])
 @login_required
 def logout():
     if request.method == 'POST':

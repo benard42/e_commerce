@@ -19,7 +19,7 @@ class E_shopping(db.Model,ExtraMixin):
     __tablename__ = 'shopping'
     product_name = db.Column(db.String(100),nullable=False)
     product_type = db.Column(db.String(100),nullable=False)
-    Product_quality = db.Column(db.Integer,nullable=False)
+    product_quantity = db.Column(db.Integer,nullable=False)
     price = db.Column(db.Integer,nullable=False)
     Total = db.Column(db.Integer,nullable= False)
     
@@ -61,6 +61,10 @@ class Post_product(db.Model, ExtraMixin):
 
     @classmethod
     def get_all_action(cls):
+        return cls.query.all()
+    
+    @classmethod
+    def get_all(cls):
         return cls.query.all()
 
     @classmethod

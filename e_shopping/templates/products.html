@@ -124,10 +124,10 @@
        {% endif %}
     </div>
     <div class=" form-container">
-        <form method="post" action="{{ url_for('views.add_fruits')}}">
+        <form method="post" action="{{ url_for('views.add_products')}}">
             <input type="text" name="product_name" placeholder="Enter a product name">
             <input type="text" name="product_type" placeholder="Enter a product type">
-            <input type="text" name="product_quality" placeholder="Enter a product quality">
+            <input type="Number" name="product_quantity" placeholder="Enter a product quantity">
             <input type="number" name="Price" placeholder="Enter a Price">
             <input tyoe="number" name="Total" placeholder="0">
             <input type="submit" value="Add Product">
